@@ -14,6 +14,6 @@ Thank you for reviewing my code test! My objective was as follows:
 
 To run the script, please first do a `bundle install` to acquire RSpec for testing.
 
-Navigate to the project directory and run `ruby ./prime_test.rb.` You will be asked to input a number for the primes count. Pressing `Enter` will run the script for 10 primes by default. Test it out with bunches!
+Navigate to the project directory and run `ruby ./prime_test.rb`. You will be asked to input a number for the primes count. Pressing `Enter` will run the script for 10 primes by default. Test it out with bunches!
 
 `rspec spec/prime_test_spec.rb` will run the tests.
