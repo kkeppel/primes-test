@@ -16,7 +16,7 @@ describe PrimeTest do
   end
 
   it "#get_n_prime_numbers should be prime" do
-    ruby_primes = Prime.take(user_input)
+    ruby_primes = Prime.take(user_input) # compare test function with Ruby stdlib for accuracy
     primes.should == ruby_primes
   end
 end
