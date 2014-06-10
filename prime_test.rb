@@ -9,7 +9,8 @@ class PrimeTest
 
   def self.get_n_prime_numbers
     puts "Enter number of primes:"
-    primes_count = PrimeTest.get_n == "" ? 10 : PrimeTest.get_n
+    primes_count = PrimeTest.get_n
+    primes_count = 10 if primes_count == "" # default to 10 primes if blank
 
     primes_count = primes_count.to_i
     primes = [2]
