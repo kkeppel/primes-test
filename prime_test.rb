@@ -9,7 +9,7 @@ class PrimeTest
 
   def self.get_n_prime_numbers
     puts "Enter number of primes:"
-    primes_count = PrimeTest.get_n || 10
+    primes_count = PrimeTest.get_n == "" ? 10 : PrimeTest.gets_n
 
     primes_count = primes_count.to_i
     primes = [2]
