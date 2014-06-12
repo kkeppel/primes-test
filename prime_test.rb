@@ -4,15 +4,12 @@ class PrimeTest
   include Math
 
   def self.get_n
-    gets.chomp
+    tries = gets
+    tries ||= ""
+    tries.chomp!
   end
 
-  def self.get_n_prime_numbers
-    puts "Enter number of primes:"
-    primes_count = PrimeTest.get_n
-    primes_count = 10 if primes_count == "" # default to 10 primes if blank
-
-    primes_count = primes_count.to_i
+  def self.get_n_prime_numbers(primes_count)
     primes = [2]
     i = 1
     number = 3
@@ -37,8 +34,9 @@ class PrimeTest
     return primes
   end
 
-  def self.run
-    columns = PrimeTest.get_n_prime_numbers
+  def self.print_primes(primes_count)
+    primes_count = primes_count.to_i
+    columns = PrimeTest.get_n_prime_numbers(primes_count)
     rows = columns.dup
     result = []
 
@@ -57,6 +55,20 @@ class PrimeTest
     table
   end
 
+  def self.run
+    puts "Enter number of primes:"
+
+    loop do
+      primes_count = PrimeTest.get_n
+      if primes_count =~ /\d/ && primes_count.to_i > 0
+        PrimeTest.print_primes(primes_count)
+        break
+      else
+        puts "Please enter a number greater than 0.\n"
+      end
+    end
+  end
+
 end
 
-PrimeTest.run
+PrimeTest.run if $0 == __FILE__
